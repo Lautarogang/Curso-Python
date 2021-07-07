@@ -1,0 +1,24 @@
+{% extends "hola/layout.html" %}
+{% block body %}
+
+<div class="container shadow mt-3">
+    <h1 style="text-align: center;">Carrito</h1>
+
+    <h3>{{user.username}}</h3>
+    {% for c in formulario %}
+    <ul>
+        <li><label style="font-size: 20px;">{{c.Nombre}}.</label>&nbsp;${{c.precio}} <a href="" class="btn btn-danger" type="button"><i class="fas fa-times"></i></a></li>
+    </ul>
+   
+        
+    {% endfor %}
+    <div class="d-flex  mb-4">
+        <a href="{% url 'Final:eliminarC' %}" class="btn btn-primary ml-auto">Vaciar carro</a>  
+        <a href="" class="btn btn-success ml-2">Finalizar compra</a>
+    </div>
+
+                                                                                                    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "registration/layout.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<br>
+<div class="container shadow">
+    <br>
+    <h2>Registro de usuario</h2>
+    <div class="row">
+                <hr>
+            <div class="col">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                <div style="text-align: center;">
+                <button type="submit" class="btn btn-success btn-block mt-4 mb-2">Registrar</button>
+                <a href="{% url 'login' %}" type="button" class="mb-2 pb-2">Iniciar sesion</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

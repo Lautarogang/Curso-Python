@@ -1,0 +1,10 @@
+# Trabajo Práctico Final para PoloTIC Misiones (Curso 2021)
+Para el curso de Desarrollo Web Full Stack con Python y JavaScript.
+
+Armado con Django, HTML, CSS, JS, SQLite y Bootstrap.
+
+Los iconos usados provienen de FontAwesome.
+
+### Alumno:
+
+* Lautaro zerbatto (DNI: 42.527.948). Mail: nahuel.zerbatto@gmail.com

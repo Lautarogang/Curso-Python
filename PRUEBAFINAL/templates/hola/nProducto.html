@@ -1,0 +1,28 @@
+{% extends "hola/layout.html" %}
+{% block body %}
+
+<div class="container mt-4 pt-2 border border-black shadow" id="containerN">
+  <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 style="text-align: center;">Nuevo Producto</h2>
+        {{form.Nombre}}
+  <div style="height: 10px;"></div>
+    <div class="row">
+      <div class="imagen col-sm">
+        <h3>Imagen:</h3>
+        {{form.imagen}}
+      </div>
+          <div class="col-sm">
+              {{form.categoria}}
+  <div style="height: 10px;"></div>
+              {{form.descripcion}}
+              <strong>{{form.precio.label}}:</strong> {{form.precio}}
+                  <div style="float: right;">
+                      <button type="submit" id="crear" class="btn btn-primary mb-2">Crear</button>
+                  </div>
+            </div>
+    </div>
+  </form>
+ <!--  {{mensaje}} -->
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "hola/layout.html" %}
+{% block body %}
+<div class="container mt-2">
+  <div class="row" id="row1" style="justify-content: center;">
+    <div class="col-9">
+      <div class="row" id="row2" style="justify-content: center;">
+        {% if productos %}
+        {% for p in productos %}
+        <div class="col-md-4 col-sm-4 col-mg-4 d-flex">
+          <div class="card" style="width: 100%;">
+          <img src="{{p.imagen.url}}" width="100px" height="100px" alt="{{p.Nombre}}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{p.Nombre}}</h5>
+            <p class="card-text">{{p.descripcion|slice:":40"}}</p>
+            <p class="card-text">{{p.precio}}&nbsp;$</p>
+          </div>
+          <div class="card-footer text-center">
+            <form action="" method="POST">
+              <a href="{% url 'Final:verP' p.id %}" id="vermas" class="btn btn-success">Ver mas</a>
+            </form>
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <div class="col-md-9 col-sm-12 col-mg-4 d-flex">
+          <div class="card mr-3" style="width: 100%;">
+           <!--  <img src="https://th.bing.com/th/id/R86ffb2f932d186af3c7fd9e470b22093?rik=hG3tvhVTKv0dEg&pid=ImgRaw" width="100%"
+              class="card-img-top"> -->
+              <h3 style="text-align: center;padding-top: 5px;">Imagen</h3>
+              <br>
+              <br>
+            <div class="card-body">
+              <!-- <h3>Producto</h3> -->
+              <h3 class="card-title">Producto</h3>
+              <p class="card-text">Descripción</p>
+              <p class="card-text">Precio</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="" class="btn btn-success disabled">Ver mas</a>
+            </div>
+          </div>
+
+        <div class="card  mr-3" style="width: 100%;">
+          <!-- <img src="https://th.bing.com/th/id/R86ffb2f932d186af3c7fd9e470b22093?rik=hG3tvhVTKv0dEg&pid=ImgRaw" width="100%"
+            class="card-img-top"> -->
+            <h3 style="text-align: center;padding-top: 5px;">Imagen</h3>
+              <br>
+              <br>
+          <div class="card-body">
+            <!-- <h3>Producto</h3> -->
+            <h3 class="card-title">Producto</h3>
+            <p class="card-text">Descripción</p>
+            <p class="card-text">Precio</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="" class="btn btn-success disabled">Ver mas</a>
+          </div>
+        </div>
+
+        <div class="card  mr-3" style="width: 100%;">
+         <!--  <img src="https://th.bing.com/th/id/R86ffb2f932d186af3c7fd9e470b22093?rik=hG3tvhVTKv0dEg&pid=ImgRaw" width="100%" class="card-img-top"> -->
+         <h3 style="text-align: center;padding-top: 5px;">Imagen</h3>
+              <br>
+              <br>
+          <div class="card-body">
+           <!--  <h3>Producto</h3> -->
+          <h3 class="card-title">Producto</h3>
+            <p class="card-text">Descripción</p>
+            <p class="card-text">Precio</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="" class="btn btn-success disabled">Ver mas</a>
+          </div>
+        </div>
+        </div>
+
+        {% endif %}
+      </div>
+    </div>
+    <!-- <div class="col-3">
+
+    </div> -->
+  </div>
+
+  {% if lista %}
+  <div class="container-fluid mt-2" style="border:1px solid black;padding: 10px;border-radius: 10px;height: 180px;overflow-y: auto; "  id="masP">
+    <h3 style="text-align:center;">Mas productos</h3>
+    <div>
+      <ul>
+        {% for l in lista %}
+          <form action="" method="POST" enctype="multipart/form-data">
+            <li><a style="color: #000000;" title="Ver mas" href="{% url 'Final:verP' l.id %}"><strong>{{l.Nombre}}:
+                </strong>{{l.descripcion}}</a> </li>
+          </form>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+    {% else %}
+
+    <div class="container-fluid mt-2" style="border:1px solid black;padding: 10px;border-radius: 10px;overflow-y: auto;height: 200px;"  id="masP">
+      <h3 style="text-align:center;">Mas productos</h3>
+      <div>
+        <ul>
+              <li><a style="color: #000000;" title="Ver mas" href="#"><strong>Titulo producto:
+                  </strong>Descripcion</a> </li>
+                  <li><a style="color: #000000;" title="Ver mas" href="#"><strong>Titulo producto:
+                  </strong>Descripcion</a> </li>
+                  <li><a style="color: #000000;" title="Ver mas" href="#"><strong>Titulo producto:
+                  </strong>Descripcion</a> </li>
+                  <li><a style="color: #000000;" title="Ver mas" href="#"><strong>Titulo producto:
+                  </strong>Descripcion</a> </li>
+                  
+        </ul>
+      </div>
+    </div>
+  
+ 
+
+  {% endif %}
+
+</div>
+
+{% endblock %}
+
+

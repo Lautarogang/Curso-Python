@@ -1,0 +1,19 @@
+{% extends "hola/layout.html" %}
+{% block body %}
+
+<div class="container mt-3" style="border:1px solid black;overflow-y: auto;">
+    <h3 style="text-align:center;">Resultado de la busqueda</h3>
+    <div>
+        <ul>
+            {% for b in busqueda %}
+            <form action="" method="POST" enctype="multipart/form-data">
+                <li><a style="color: #000000;" title="Ver mas" href="{% url 'Final:verP' b.id %}"><strong>{{b.Nombre}}:
+                        </strong>{{b.descripcion}}</a> </li>
+            </form>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}

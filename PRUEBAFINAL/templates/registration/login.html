@@ -1,0 +1,26 @@
+{% extends "registration/layout.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <br><br><br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Ingrese tus credenciales</h2>
+                    <hr>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn btn-success btn-block mt-2">Ingresar</button>
+                            <label for=""><strong> Acaso no tienes cuenta?</strong></label><a href="{% url 'Final:registro' %}">Registrate</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "hola/layout.html" %}
+{% block body %}
+
+<div class="container mt-4 pt-2 border border-black shadow">
+  <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 style="text-align: center;">Modificar Producto</h2>
+        {{form.Nombre}}
+  <div style="height: 10px;"></div>
+    <div class="row">
+      <div class="imagen col-sm">
+        <h3>Imagen:</h3>
+        {{form.imagen}}
+      </div>
+          <div class="col-sm">
+              {{form.categoria}}
+  <div style="height: 10px;"></div>
+              {{form.descripcion}}
+              {{form.precio.label}}: {{form.precio}}
+                  <div style="float: right;">
+                    <button type="submit" class="btn btn-primary mb-2">Editar</button>
+                  </div>
+            </div>
+    </div>
+  </form>
+  {{mensaje}}
+  
+  {% for p in productos %}
+  <a href="{% url 'Final:eliminarP' p.id %}" class="btn btn-primary mb-2">Eliminar</a>
+  {% endfor %}
+</div>
+{% endblock %}
