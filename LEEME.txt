@@ -8,3 +8,9 @@ Los iconos usados provienen de FontAwesome.
 ### Alumno:
 
 * Lautaro zerbatto (DNI: 42.527.948). Mail: nahuel.zerbatto@gmail.com
+
+
+Usuarios del Sistema:
+
+superUser(lautaro:123)
+Usuario con permisos(nahuel123:caranchitokpo)
